@@ -1,0 +1,123 @@
+.header {
+    width: 100%;
+}
+.header__inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color: #000;
+}
+.header__logo{
+    width: 30%;
+    display: inline-block;
+    padding: 0 0.6em;
+}
+.header__logo img {
+    width: 100%;
+    height: 100%;
+}
+.search-form {
+    width: 35%;
+}
+.search-form__keyword {
+    width: 100%;
+    margin: 0 5px;
+    padding: 2px 10px;
+    font-size: 10px;
+}
+.search-form__keyword:focus{
+    outline: #000 1px solid;
+    border-radius: 2px;
+}
+.header__nav {
+    width: 35%;
+    padding: 0 5px;
+}
+.header__nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header__nav-item {
+    font-size: 0.4rem;
+}
+.header__nav-link {
+    color: #fff;
+    text-decoration: none;
+}
+.logout__button,
+.login__button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.4rem;
+}
+.header__nav-link--sell {
+    margin-left: 5px;
+    padding: 3px 8px;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.form__error {
+    padding: 5px 10px;
+    text-align: left;
+    color: #ff0000;
+    font-size: 12px;
+}
+
+@media (min-width: 1024px) {
+    .search-form__keyword {
+        width: 100%;
+        padding: 10px 20px;
+    }
+    .header__nav {
+        width: 30%;
+        padding: 0 20px;
+    }
+    .header__nav-item {
+        padding: 5px;
+        font-size: 16px;
+    }
+    .logout__button,
+    .login__button {
+        font-size: 16px;
+    }
+    .header__nav-link--sell {
+        padding: 5px 10px;
+        border-radius: 2px;
+    }
+
+    .form__error {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .search-form__keyword {
+        width: 100%;
+        padding: 5px 20px;
+    }
+    .header__nav {
+        padding: 0 20px;
+    }
+    .header__nav-item {
+        padding-right: 5px;
+        font-size: 14px;
+    }
+    .logout__button,
+    .login__button {
+        font-size: 14px;
+    }
+    .header__nav-link--sell {
+        padding: 5px 8px;
+    }
+
+    .form__error {
+        font-size: 16px;
+    }
+}

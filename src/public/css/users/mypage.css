@@ -1,0 +1,58 @@
+.mypage {
+    width: 100%;
+}
+.mypage__info {
+    margin-top: 20px;
+}
+.user {
+    display: flex;
+    margin: 10px 50px;
+    align-items: center;
+}
+.user__icon img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 50px;
+    object-fit: cover;
+}
+.user__name {
+    font-size: 20px;
+    font-weight: bold
+}
+.profile-form {
+    text-align: center;
+}
+.profile-form__button-submit {
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: #ff5555 1px solid;
+    color: #ff5555;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .mypage__info {
+        display: flex;
+        margin-top: 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .user {
+        margin: 30px auto;
+    }
+    .user__icon {
+        width: 100px;
+        height: 100px;
+    }
+    .profile-form {
+        margin-right: 200px;
+    }
+    .profile-form__button-submit {
+        margin-bottom: 0;
+        padding: 10px 30px;
+    }
+}

@@ -1,0 +1,143 @@
+.sell-form__container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+}
+.sell-form__title {
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+.form-groups {
+    width: 100%;
+    margin: 20px 0;
+}
+.form-groups__title {
+    width: 100%;
+    border-bottom: #5F5F5F 1px solid;
+    color: #5F5F5F;
+}
+.form-group {
+    width: 100%;
+    margin: 5px 0;
+}
+.form-group__title {
+    padding: 5px 0;
+    font-weight: bold;
+}
+.form-group__content--img {
+    border: #5F5F5F 1px dotted;
+    text-align: center;
+}
+.form-group__input--file input {
+    display: none;
+}
+.file-custom__button {
+    display: inline-block;
+    margin: 30px auto;
+    padding: 5px 10px;
+    color: #FF5555;
+    font-size: 14px;
+    border: #FF5555 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-group__content {
+    width: 100%;
+}
+
+.form-group__input--select,
+.form-group__input--text,
+.form-group__input--textarea {
+    width: 100%;
+    padding: 5px;
+}
+.form-group__input--select:focus,
+.form-group__input--text:focus,
+.form-group__input--textarea:focus {
+    outline: #000 1px solid;
+    border-radius: 2px;
+}
+.form-group__input--number:focus {
+    outline: none;
+}
+.form-group__content--number {
+    width: 100%;
+    display: flex;
+    padding: 5px;
+    border: #5F5F5F 1px solid;
+    border-radius: 3px;
+}
+.form-group__input--number {
+    width: 100%;
+    border: none;
+}
+.unit {
+    padding: 0 5px;
+    font-weight: bold;
+}
+.form-group__input--number::-webkit-inner-spin-button,
+.form-group__input--number::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.form-group__content--category {
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-group__input--checkbox {
+    display: none;
+}
+.form-group__label--checkbox {
+    margin: 3px;
+    padding: 1px 5px;
+    border: #FF5555 1px solid;
+    border-radius: 10px;
+    color: #FF5555;
+    font-size: 10px;
+    cursor: pointer;
+}
+.form-group__input--checkbox:checked + .form-group__label--checkbox {
+    background-color: #FF5555;
+    color: #fff;
+}
+
+.sell-form__button {
+    margin-top: 50px;
+}
+.sell-form__button-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #FF5555;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+@media (min-width: 1024px) {
+    .sell-form__container {
+        width: 50%;
+    }
+    .form-group__label--checkbox {
+        margin: 5px 3px;
+        padding: 2px 10px;
+        font-size: 12px;
+        border-radius: 15px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .sell-form__container {
+        width: 60%;
+    }
+    .form-group__label--checkbox {
+        margin: 5px 3px;
+        padding: 2px 10px;
+        font-size: 12px;
+        border-radius: 15px;
+    }
+}
