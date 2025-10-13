@@ -25,6 +25,7 @@ coachtechフリマ
   MAIL_PASSWORD=null
   MAIL_ENCRYPTION=null
 ・php artisan key:generate
+・docker-compose exec php vendor/bin/phpunit
 ・php artisan migrate
 ・php artisan db:seed
 ・php artisan storage:link
