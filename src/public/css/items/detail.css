@@ -45,11 +45,11 @@
     height: 30px;
 }
 
-.mark__icon--favorite {
+.icon-favorite--inactive {
     width: 100%;
     cursor: pointer;
 }
-.mark__icon--favorites {
+.icon-favorite--active {
     width: 100%;
     cursor: pointer;
     fill: #FF5555;

@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   nginx:
@@ -10,6 +10,7 @@ services:
       - ./src:/var/www/
     depends_on:
       - php
+
   mailhog:
     image: mailhog/mailhog
     ports:
@@ -33,6 +34,7 @@ services:
     volumes:
       - ./docker/mysql/data:/var/lib/mysql
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    container_name: mysql
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin

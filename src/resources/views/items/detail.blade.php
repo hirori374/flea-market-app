@@ -31,11 +31,11 @@
                                 </symbol>
                             </svg>
                             <svg class="icon-star">
-                                <use href="#icon-star" class="mark__icon--favorites" />
+                                <use href="#icon-star" class="icon-favorite--active" />
                             </svg>
                         </a>
                     @else<!-- お気に入り登録していない商品（お気に入り登録追加） -->
-                        <a href="/item/{{$item['id']}}/favorite"><img src="{{ asset('img/star_icon.svg') }}" alt="" class="mark__icon--favorite"></a>
+                        <a href="/item/{{$item['id']}}/favorite"><img src="{{ asset('img/star_icon.svg') }}" alt="" class="icon-favorite--inactive"></a>
                     @endif
                     <span class="mark__count">{{$favoritesCount}}</span>
                 </div>
@@ -72,7 +72,7 @@
                     <div class="user__comment">{{$comment['content']}}</div>
                     @endforeach
                 </div>
-                <form action="/comment/{{$item['id']}}" method="get" class="comment-form">
+                <form action="/comment/{{$item['id']}}" method="post" class="comment-form">
                     @csrf
                     <div class="comment-form__title">商品へのコメント</div>
                     <textarea name="content" class="comment-form__textarea" rows=6>{{old('content')}}</textarea>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PurchaseController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 
@@ -33,27 +34,31 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back();
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-
+//商品一覧・商品詳細
 Route::get('/', [ItemController::class,'index'])->name('index');
 Route::get('/item/{itemId}', [ItemController::class,'detail'])->name('items.detail');
 
 Route::middleware(['auth', 'verified'])->group(function () {
+    //お気に入り登録・解除・コメント
     Route::get('/item/{itemId}/favorite',[ItemController::class,'favorite'])->name('item.favorite');
     Route::get('/item/{itemId}/favorite/delete',[ItemController::class,'favoriteDestroy'])->name('item.favorite.destroy');
-    Route::get('/comment/{itemId}', [ItemController::class,'comment'])->name('comment');
+    Route::post('/comment/{itemId}', [ItemController::class,'comment'])->name('comment');
 
-    Route::get('/purchase/{itemId}', [ItemController::class,'purchase'])->name('purchase');
-    Route::get('/purchase/payMethod/{itemId}', [ItemController::class,'payMethod'])->name('payMethod');
-    Route::get('/purchase/address/{itemId}', [ItemController::class,'address'])->name('address');
-    Route::post('/purchase/{itemId}/address', [ItemController::class,'updateAddress'])->name('purchase.address.update');
-    Route::post('/purchase/{itemId}', [ItemController::class,'checkout'])->name('checkout');
-    Route::get('/payment/success/{purchase}', [ItemController::class, 'success'])->name('payment.success');
-    Route::get('/payment/cancel/{purchase}', [ItemController::class, 'cancel'])->name('payment.cancel');
-    Route::post('/session', [ItemController::class, 'session'])->name('session');
+    //商品購入・購入情報確認・決済
+    Route::get('/purchase/{itemId}', [PurchaseController::class,'purchase'])->name('purchase');
+    Route::get('/purchase/payMethod/{itemId}', [PurchaseController::class,'payMethod'])->name('payMethod');
+    Route::get('/purchase/address/{itemId}', [PurchaseController::class,'address'])->name('address');
+    Route::post('/purchase/address/{itemId}', [PurchaseController::class,'changeAddress'])->name('purchase.address.change');
+    Route::post('/purchase/{itemId}', [PurchaseController::class,'checkout'])->name('checkout');
+    Route::get('/payment/success/{purchase}', [PurchaseController::class, 'success'])->name('payment.success');
+    Route::get('/payment/cancel/{purchase}', [PurchaseController::class, 'cancel'])->name('payment.cancel');
+    Route::post('/session', [PurchaseController::class, 'session'])->name('session');
 
+    //商品出品
     Route::get('/sell', [UserController::class,'sell'])->name('sell');
     Route::post('/sell', [UserController::class,'store'])->name('store');
 
+    //マイページ・プロフィール編集
     Route::get('/mypage', [UserController::class,'mypage']);
     Route::get('/mypage/profile', [UserController::class,'profile'])->name('profile');
     Route::patch('/mypage/profile/update', [UserController::class,'update'])->name('profile.update');
